@@ -6,7 +6,8 @@ import Box from "grommet/components/Box";
 import Anchor from "grommet/components/Anchor";
 
 import IconPdf from "grommet/components/icons/base/DocumentPdf";
-import IconGithub from "grommet/components/icons/base/SocialGithub";
+
+import KdoSocial from "./kdoSocial";
 
 class KdoCard extends React.Component {
   state = {};
@@ -26,9 +27,7 @@ class KdoCard extends React.Component {
           link={<Anchor href="" icon={<IconPdf />} label="Download CV" />}
           colorIndex="light-2"
         />
-        <Box colorIndex="neutral-1" pad="small">
-          <Anchor href="" icon={<IconGithub />} label="Github" />
-        </Box>
+        <KdoSocial small={false} />
       </Box>
     );
   }
