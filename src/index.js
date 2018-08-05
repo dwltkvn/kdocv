@@ -45,7 +45,7 @@ class App extends React.Component {
           <KdoCard />
         </Box>
         <Box>
-          {this.state.small ? <KdoSocial small={this.state.small} /> : null}
+          {this.state.small ? <KdoCard small={this.state.small} /> : null}
           <CvArticle title="Hello!" small={this.state.small} />
           <CvArticle title="Experiences" small={this.state.small} />
           <CvArticle title="Education" small={this.state.small} />

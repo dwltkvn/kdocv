@@ -8,7 +8,11 @@ import IconGithub from "grommet/components/icons/base/SocialGithub";
 
 const SocialAnchor = props => {
   const label = props.small ? null : props.label;
-  return <Anchor href="" icon={props.icon} label={label} />;
+  return (
+    <Box colorIndex="neutral-1" pad="small">
+      <Anchor href="" icon={props.icon} label={label} />
+    </Box>
+  );
 };
 
 class KdoSocial extends React.Component {
@@ -23,14 +27,24 @@ class KdoSocial extends React.Component {
     const dir = this.props.small ? "row" : "column";
     return (
       <Box
-        colorIndex="neutral-1"
         pad="small"
         align="center"
         direction={dir}
-        justify="end"
+        justify="between"
         margin="small"
         responsive={false}
+        wrap={true}
       >
+        <SocialAnchor
+          small={this.props.small}
+          label="Github"
+          icon={<IconGithub />}
+        />
+        <SocialAnchor
+          small={this.props.small}
+          label="Github"
+          icon={<IconGithub />}
+        />
         <SocialAnchor
           small={this.props.small}
           label="Github"
