@@ -10,6 +10,7 @@ import IconPdf from "grommet/components/icons/base/Download";
 import IconDown from "grommet/components/icons/base/Down";
 
 import KdoSocial from "./kdoSocial";
+import KdoSkillsTyping from "./kdoSkillsTyping";
 
 class KdoCard extends React.Component {
   state = {};
@@ -41,6 +42,7 @@ class KdoCard extends React.Component {
           }
           colorIndex="light-2"
         />
+        <KdoSkillsTyping />
         <KdoSocial small={this.props.small} />
         {this.props.small ? (
           <Box align="center">
