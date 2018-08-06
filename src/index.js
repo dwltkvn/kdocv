@@ -46,12 +46,28 @@ class App extends React.Component {
         </Box>
         <Box>
           {this.state.small ? <KdoCard small={this.state.small} /> : null}
-          <CvArticle title="Hello!" small={this.state.small} />
+          <CvArticle
+            title="Hello!"
+            small={this.state.small}
+            colorIndex="light-2"
+          />
           <CvArticle title="Experiences" small={this.state.small} />
-          <CvArticle title="Education" small={this.state.small} />
+          <CvArticle
+            title="Education"
+            small={this.state.small}
+            colorIndex="light-2"
+          />
           <CvArticle title="This is what I do" small={this.state.small} />
-          <CvArticle title="I like" small={this.state.small} />
-          <CvArticle title="Contact" small={this.state.small} />
+          <CvArticle
+            title="I like"
+            small={this.state.small}
+            colorIndex="light-2"
+          />
+          <CvArticle
+            title="Contact"
+            small={this.state.small}
+            colorIndex="light-2"
+          />
         </Box>
       </Split>
     );

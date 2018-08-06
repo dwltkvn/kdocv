@@ -14,7 +14,7 @@ class CvArticle extends React.Component {
 
   // {this.props.children}
   render() {
-    const sep = this.props.small ? "none" : "all";
+    const sep = this.props.small ? "none" : "none";
     const spacing = this.props.small ? "none" : "small";
     return (
       <Section
@@ -22,11 +22,12 @@ class CvArticle extends React.Component {
         margin={spacing}
         pad={spacing}
         full={this.props.small}
+        colorIndex={this.props.colorIndex}
       >
         <Animate
           enter={{ animation: "fade", duration: 1000, delay: 0 }}
           keep={true}
-          visible="scroll"
+          visible={this.props.small ? "scroll" : true}
         >
           <Headline size="small">{this.props.title}</Headline>
         </Animate>
@@ -35,6 +36,10 @@ class CvArticle extends React.Component {
     );
   }
 }
+
+CvArticle.defaultProps = {
+  colorIndex: "light-1"
+};
 
 CvArticle.propTypes = {
   title: PropTypes.string.isRequired

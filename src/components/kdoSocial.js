@@ -2,17 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Box from "grommet/components/Box";
-import Anchor from "grommet/components/Anchor";
+import Button from "grommet/components/Button";
 
 import IconGithub from "grommet/components/icons/base/SocialGithub";
 
+// small stateless component that represent a social button. Props are icon, label and href
 const SocialAnchor = props => {
-  const label = props.small ? null : props.label;
-  return (
-    <Box colorIndex="neutral-1" pad="small">
-      <Anchor href="" icon={props.icon} label={label} />
-    </Box>
-  );
+  return <Button icon={props.icon} label={props.label} href={props.href} />;
 };
 
 class KdoSocial extends React.Component {
@@ -37,23 +33,9 @@ class KdoSocial extends React.Component {
       >
         <SocialAnchor
           small={this.props.small}
-          label="/dwltkvn"
+          label="/ dwltkvn"
           icon={<IconGithub />}
-        />
-        <SocialAnchor
-          small={this.props.small}
-          label="Github"
-          icon={<IconGithub />}
-        />
-        <SocialAnchor
-          small={this.props.small}
-          label="Github"
-          icon={<IconGithub />}
-        />
-        <SocialAnchor
-          small={this.props.small}
-          label="Github"
-          icon={<IconGithub />}
+          href="https://github.com/dwltkvn"
         />
       </Box>
     );
