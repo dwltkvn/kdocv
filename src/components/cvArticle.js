@@ -13,12 +13,13 @@ class CvArticle extends React.Component {
 
   // {this.props.children}
   render() {
-    const sep = this.props.small ? "" : "all";
+    const sep = this.props.small ? "none" : "all";
+    const spacing = this.props.small ? "none" : "small";
     return (
       <Section
         separator={sep}
-        margin="small"
-        pad="medium"
+        margin={spacing}
+        pad={spacing}
         full={this.props.small}
       >
         <Headline size="small">{this.props.title}</Headline>
