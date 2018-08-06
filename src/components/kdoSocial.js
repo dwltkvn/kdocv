@@ -37,7 +37,7 @@ class KdoSocial extends React.Component {
       >
         <SocialAnchor
           small={this.props.small}
-          label="Github"
+          label="/dwltkvn"
           icon={<IconGithub />}
         />
         <SocialAnchor

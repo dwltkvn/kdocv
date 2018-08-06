@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import Section from "grommet/components/Section";
 import Headline from "grommet/components/Headline";
+import Animate from "grommet/components/Animate";
 
 class CvArticle extends React.Component {
   state = {};
@@ -22,7 +23,13 @@ class CvArticle extends React.Component {
         pad={spacing}
         full={this.props.small}
       >
-        <Headline size="small">{this.props.title}</Headline>
+        <Animate
+          enter={{ animation: "fade", duration: 1000, delay: 0 }}
+          keep={true}
+          visible="scroll"
+        >
+          <Headline size="small">{this.props.title}</Headline>
+        </Animate>
         {this.props.children}
       </Section>
     );

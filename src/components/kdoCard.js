@@ -5,8 +5,8 @@ import Box from "grommet/components/Anchor";
 import Card from "grommet/components/Card";
 import Section from "grommet/components/Box";
 import Anchor from "grommet/components/Anchor";
+import Tip from "grommet/components/Tip";
 
-import Pulse from "grommet/components/icons/Pulse";
 import IconPdf from "grommet/components/icons/base/Download";
 import IconDown from "grommet/components/icons/base/Down";
 
@@ -43,9 +43,10 @@ class KdoCard extends React.Component {
           colorIndex="light-2"
         />
         <KdoSocial small={this.props.small} />
+        <Tip target="actions">Continue</Tip>
         {this.props.small ? (
-          <Box alignSelf="center" align="center">
-            <IconDown />
+          <Box align="center">
+            <IconDown id="actions" />
           </Box>
         ) : null}
       </Section>
