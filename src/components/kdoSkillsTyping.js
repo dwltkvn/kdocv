@@ -54,16 +54,20 @@ class KdoSkillsTyping extends React.Component {
         .add({
           targets: targets,
           opacity: ml4.opacityIn,
-          scale: ml4.scaleIn,
-          duration: ml4.durationIn
+          translateY: ["-1em", "0em"],
+          //scale: ml4.scaleIn,
+          duration: ml4.durationIn,
+          elasticity: 500
         })
         .add({
           targets: targets,
           opacity: 0,
-          scale: ml4.scaleOut,
+          translateY: ["0em", "1em"],
+          //scale: ml4.scaleOut,
           duration: ml4.durationOut,
           easing: "easeInExpo",
           delay: ml4.delay
+          //elasticity: 1000
         });
     });
   }
@@ -73,7 +77,7 @@ class KdoSkillsTyping extends React.Component {
     return (
       <Box direction="row" separator="none" responsive={false}>
         <Paragraph margin="none" size="large">
-          I Like
+          I <IconLike />
         </Paragraph>
         <Paragraph margin="none" className="ml4" size="large">
           {Skills.map((e, i) => {
