@@ -1,13 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Typing from "react-typing-animation";
+import anime from "animejs";
 
 import Box from "grommet/components/Box";
 import Label from "grommet/components/Label";
 
 import IconLike from "grommet/components/icons/base/Like";
 
-const Skills = ["Qt ", "C++ ", "SQLite ", "Javascript ", "React "];
+import "./kdoSkillsTyping.css";
+
+const Skills = [
+  "Qt ",
+  "C++ ",
+  "design",
+  "SQLite ",
+  "to solve problem",
+  "Javascript ",
+  "React "
+];
 const Colors = [
   "brand",
   "accent-1",
@@ -24,43 +34,50 @@ class KdoSkillsTyping extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      currentColor: 0
-    };
-    this.cbOnFinishedTyping = this.cbOnFinishedTyping.bind(this);
+    this.state = {};
   }
 
-  cbOnFinishedTyping() {
-    const c = Math.floor(Math.random() * Math.floor(Colors.length));
-    this.setState({ currentColor: c });
+  componentDidMount() {
+    var ml4 = {};
+    ml4.opacityIn = [0, 1];
+    ml4.scaleIn = [0.2, 1];
+    ml4.scaleOut = 3;
+    ml4.durationIn = 800;
+    ml4.durationOut = 600;
+    ml4.delay = 500;
+
+    let animeObj = anime.timeline({ loop: true });
+    Skills.forEach((e, i) => {
+      const targets = `.ml4 .letters-${i}`;
+      animeObj
+        .add({
+          targets: targets,
+          opacity: ml4.opacityIn,
+          scale: ml4.scaleIn,
+          duration: ml4.durationIn
+        })
+        .add({
+          targets: targets,
+          opacity: 0,
+          scale: ml4.scaleOut,
+          duration: ml4.durationOut,
+          easing: "easeInExpo",
+          delay: ml4.delay
+        });
+    });
   }
 
   render() {
     // https://www.npmjs.com/package/react-typing-animation
     return (
-      <Box direction="row" responsive={false} separator="none" align="center">
-        <Label>
-          {"I  "}
-          <IconLike />
+      <Box direction="row" separator="none" responsive={false}>
+        <Label>I Like</Label>
+        <Label className="ml4">
+          {Skills.map((e, i) => {
+            const classs = `letters letters-${i}`;
+            return <span className={classs}>{e}</span>;
+          })}
         </Label>
-        <Box colorIndex={Colors[this.state.currentColor]}>
-          <Typing
-            loop={true}
-            speed={100}
-            onFinishedTyping={() => this.cbOnFinishedTyping()}
-          >
-            {Skills.map((e, i) => {
-              const c = i; // Math.floor(Math.random() * Math.floor(Colors.length));
-              return (
-                <div>
-                  <Label>{e}</Label>
-                  <Typing.Delay ms={1000} />
-                  <Typing.Backspace count={e.length} />
-                </div>
-              );
-            })}
-          </Typing>
-        </Box>
       </Box>
     );
   }

@@ -33,6 +33,7 @@ class KdoCard extends React.Component {
           thumbnail="https://avatars2.githubusercontent.com/u/7428297?s=460&v=4"
           label="Dowlut Kevin"
           heading="Software Developer"
+          description={<KdoSkillsTyping />}
           link={
             <Anchor
               href=""
@@ -42,7 +43,6 @@ class KdoCard extends React.Component {
           }
           colorIndex="light-2"
         />
-        <KdoSkillsTyping />
         <KdoSocial small={this.props.small} />
         {this.props.small ? (
           <Box align="center">
