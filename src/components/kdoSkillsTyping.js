@@ -4,6 +4,7 @@ import anime from "animejs";
 
 import Box from "grommet/components/Box";
 import Label from "grommet/components/Label";
+import Paragraph from "grommet/components/Paragraph";
 
 import IconLike from "grommet/components/icons/base/Like";
 
@@ -71,13 +72,15 @@ class KdoSkillsTyping extends React.Component {
     // https://www.npmjs.com/package/react-typing-animation
     return (
       <Box direction="row" separator="none" responsive={false}>
-        <Label>I Like</Label>
-        <Label className="ml4">
+        <Paragraph margin="none" size="large">
+          I Like
+        </Paragraph>
+        <Paragraph margin="none" className="ml4" size="large">
           {Skills.map((e, i) => {
             const classs = `letters letters-${i}`;
             return <span className={classs}>{e}</span>;
           })}
-        </Label>
+        </Paragraph>
       </Box>
     );
   }
