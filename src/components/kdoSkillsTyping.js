@@ -11,11 +11,11 @@ import IconLike from "grommet/components/icons/base/Like";
 import "./kdoSkillsTyping.css";
 
 const Skills = [
-  "Qt ",
+  "Qt Framework",
   "C++ ",
-  "design",
+  "Design",
   "SQLite ",
-  "to solve problem",
+  "To solve problem",
   "Javascript ",
   "React "
 ];

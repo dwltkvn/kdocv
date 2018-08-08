@@ -57,7 +57,11 @@ class App extends React.Component {
             small={this.state.small}
             colorIndex="light-2"
           />
-          <CvArticle title="This is what I do" small={this.state.small} />
+          <CvArticle
+            title="This is what I do"
+            small={this.state.small}
+            colorIndex="light-1"
+          />
           <CvArticle
             title="I like"
             small={this.state.small}
@@ -66,7 +70,7 @@ class App extends React.Component {
           <CvArticle
             title="Contact"
             small={this.state.small}
-            colorIndex="light-2"
+            colorIndex="light-1"
           />
         </Box>
       </Split>
