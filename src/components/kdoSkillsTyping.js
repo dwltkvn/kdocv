@@ -12,7 +12,7 @@ import "./kdoSkillsTyping.css";
 
 const Skills = [
   "Qt Framework",
-  "C++ ",
+  "C & C++ ",
   "Design",
   "SQLite ",
   "To solve problem",
