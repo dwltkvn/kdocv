@@ -1,18 +1,18 @@
 import React from "react";
-import ReactDOM from "react-dom";
+//import ReactDOM from "react-dom";
 import Split from "grommet/components/Split";
 import Box from "grommet/components/Box";
 
 import Responsive from "grommet/utils/Responsive";
 
-import KdoCard from "./components/kdoCard";
-import CvArticle from "./components/cvArticle";
-import KdoSocial from "./components/kdoSocial";
+import KdoCard from "../components/kdoCard";
+import CvArticle from "../components/cvArticle";
+import KdoSocial from "../components/kdoSocial";
 
 import "./styles.css";
-import "../node_modules/grommet-css";
+//import "../node_modules/grommet-css";
 
-class App extends React.Component {
+export default class Index extends React.Component {
   state = {};
 
   constructor(props) {
@@ -78,5 +78,5 @@ class App extends React.Component {
   }
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+//const rootElement = document.getElementById("root");
+//ReactDOM.render(<App />, rootElement);
