@@ -6,6 +6,8 @@ module.exports = {
   },
   pathPrefix: '/gatsby-starter-grommet',
   plugins: [
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'custom-sass-loader',
       options: {
@@ -15,7 +17,14 @@ module.exports = {
           })
         ]
       }
-    }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`,
+      },
+    },
   ],
 }
 

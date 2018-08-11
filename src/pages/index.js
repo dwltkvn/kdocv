@@ -2,7 +2,6 @@ import React from "react";
 
 import Split from "grommet/components/Split";
 import Box from "grommet/components/Box";
-
 import Responsive from "grommet/utils/Responsive";
 
 import KdoCard from "../components/kdoCard";
@@ -41,10 +40,10 @@ export default class Index extends React.Component {
         showOnResponsive="priority"
       >
         <Box>
-          <KdoCard />
+          <KdoCard propImg={this.props.data.headerImage}/>
         </Box>
         <Box>
-          {this.state.small ? <KdoCard small={this.state.small} /> : null}
+          {this.state.small ? <KdoCard small={this.state.small} propImg={this.props.data.headerImage} /> : null}
           <CvArticle
             title="Hello!"
             small={this.state.small}
@@ -76,3 +75,13 @@ export default class Index extends React.Component {
     );
   }
 }
+
+export const pageQuery = graphql`
+  query HeaderImageQuery {
+    headerImage: imageSharp(id: { regex: "/kdo.jpg/" }) {
+      sizes(maxWidth: 1240) {
+        ...GatsbyImageSharpSizes_tracedSVG
+      }
+    }
+  }
+`

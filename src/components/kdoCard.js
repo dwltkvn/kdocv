@@ -1,10 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import Img from "gatsby-image";
+
 import Box from "grommet/components/Anchor";
 import Card from "grommet/components/Card";
 import Section from "grommet/components/Box";
 import Anchor from "grommet/components/Anchor";
+
+import Hero from "grommet/components/Hero";
 
 import IconPdf from "grommet/components/icons/base/Download";
 import IconDown from "grommet/components/icons/base/Down";
@@ -29,8 +33,9 @@ class KdoCard extends React.Component {
         full={this.props.small}
         justify="between"
       >
+      <Box>
+        <Hero background={<Img title="Dowlut Kevin" alt="Welcome !" sizes={this.props.propImg.sizes} style={{}} />}/>
         <Card
-          thumbnail="https://avatars2.githubusercontent.com/u/7428297?s=460&v=4"
           label="Dowlut Kevin"
           heading="Software Developer"
           description={<KdoSkillsTyping />}
@@ -43,6 +48,7 @@ class KdoCard extends React.Component {
           }
           colorIndex="light-2"
         />
+      </Box>
         <KdoSocial small={this.props.small} />
         {this.props.small ? (
           <Box align="center">
