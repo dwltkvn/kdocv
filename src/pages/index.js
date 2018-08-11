@@ -1,5 +1,5 @@
 import React from "react";
-//import ReactDOM from "react-dom";
+
 import Split from "grommet/components/Split";
 import Box from "grommet/components/Box";
 
@@ -10,7 +10,6 @@ import CvArticle from "../components/cvArticle";
 import KdoSocial from "../components/kdoSocial";
 
 import "./styles.css";
-//import "../node_modules/grommet-css";
 
 export default class Index extends React.Component {
   state = {};
@@ -77,6 +76,3 @@ export default class Index extends React.Component {
     );
   }
 }
-
-//const rootElement = document.getElementById("root");
-//ReactDOM.render(<App />, rootElement);
