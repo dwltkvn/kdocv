@@ -82,7 +82,7 @@ class KdoSkillsTyping extends React.Component {
         <Paragraph margin="none" className="ml4" size="large">
           {Skills.map((e, i) => {
             const classs = `letters letters-${i}`;
-            return <span className={classs}>{e}</span>;
+            return <span className={classs} key={i}>{e}</span>;
           })}
         </Paragraph>
       </Box>
