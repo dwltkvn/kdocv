@@ -25,6 +25,7 @@ class KdoCard extends React.Component {
 
   render() {
     const marg = this.props.small ? "none" : "small";
+      
     return (
       <Section
         direction="column"
@@ -33,7 +34,7 @@ class KdoCard extends React.Component {
         full={this.props.small}
         justify="between"
       >
-      <Box>
+      <div>
         <Hero background={<Img title="Dowlut Kevin" alt="Welcome !" sizes={this.props.propImg.sizes} style={{}} />}/>
         <Card
           label="Dowlut Kevin"
@@ -48,7 +49,7 @@ class KdoCard extends React.Component {
           }
           colorIndex="light-2"
         />
-      </Box>
+      </div>
         <KdoSocial small={this.props.small} />
         {this.props.small ? (
           <Box align="center">
