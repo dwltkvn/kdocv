@@ -16,6 +16,10 @@ export default class Index extends React.Component {
   constructor(props) {
     super(props);
     this._onResponsive = this._onResponsive.bind(this);
+    this.state =
+    {
+      small : false,
+    }
   }
 
   componentDidMount() {
@@ -37,13 +41,10 @@ export default class Index extends React.Component {
         flex="right"
         fixed={true}
         priority="right"
-        showOnResponsive="priority"
+        showOnResponsive="both"
       >
+        <KdoCard propImg={this.props.data.headerImage}/>
         <Box>
-          <KdoCard propImg={this.props.data.headerImage}/>
-        </Box>
-        <Box>
-          {this.state.small ? <KdoCard small={this.state.small} propImg={this.props.data.headerImage} /> : null}
           <CvArticle
             title="Hello!"
             small={this.state.small}
