@@ -29,9 +29,15 @@ class CvArticle extends React.Component {
           keep={true}
           visible={this.props.small ? "scroll" : true}
         >
-          <Headline size="small">{this.props.title}</Headline>
+          <Headline size="small" margin="none">{this.props.title}</Headline>
         </Animate>
+        <Animate
+          enter={{ animation: "fade", duration: 3000, delay: 0 }}
+          keep={true}
+          visible={this.props.small ? "scroll" : true}
+        >
         {this.props.children}
+        </Animate>
       </Section>
     );
   }
