@@ -15,7 +15,8 @@ class CvArticle extends React.Component {
   // {this.props.children}
   render() {
     const sep = this.props.small ? "none" : "none";
-    const spacing = this.props.small ? "none" : "small";
+    const spacing = this.props.small ? "none" : "none";
+    
     return (
       <Section
         separator={sep}
@@ -29,7 +30,7 @@ class CvArticle extends React.Component {
           keep={true}
           visible={this.props.small ? "scroll" : true}
         >
-          <Headline size="small" margin="none">{this.props.title}</Headline>
+          <Headline size="small" margin="small">{this.props.title}</Headline>
         </Animate>
         <Animate
           enter={{ animation: "fade", duration: 3000, delay: 0 }}

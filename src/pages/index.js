@@ -15,7 +15,7 @@ import ListItem from 'grommet/components/ListItem';
 import KdoCard from "../components/kdoCard";
 import CvArticle from "../components/cvArticle";
 import KdoSocial from "../components/kdoSocial";
-import {LanguageContent,ExperienceContent} from "../components/cvArticleContent";
+import {LanguageContent,ExperienceContent,DiyContent,DescriptionContent} from "../components/cvArticleContent";
 
 import "./styles.css";
 
@@ -59,14 +59,14 @@ export default class Index extends React.Component {
             small={this.state.small}
             colorIndex="light-2"
           >
-            <Paragraph>
+            <DescriptionContent>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a felis fermentum, efficitur sapien ac, varius turpis. Donec at elementum mauris. Duis molestie lobortis erat eget facilisis. Vivamus commodo hendrerit lectus, ac ullamcorper velit malesuada id. Vestibulum et mattis sapien. Curabitur vitae vehicula ipsum. Donec non ex vel eros ultricies ultricies. Aliquam nisi tellus, elementum ac risus at, fringilla finibus metus. Aliquam maximus odio quis ligula finibus luctus. Vestibulum id metus tristique, iaculis massa vitae, condimentum arcu. Nam tristique est vel convallis volutpat. Donec ac felis vel ligula vehicula placerat vitae non ante.
-            </Paragraph>
+            </DescriptionContent>
           </CvArticle>
           { /* ------------------------------------------------------ */ }
           <CvArticle title="Experiences" small={this.state.small}>
-            <List selectable={true} >
-              <ExperienceContent startingDate="2013" endingDate="Currently employed" company="Blue-Ortho" city="Gières">
+            <List selectable={false} >
+              <ExperienceContent subheading="2013 (Currently employed)" heading="Blue-Ortho an Exactec Company, Gières">
               Développement d’une caméra de localisation temps réel 3D pour la chirurgie assistée par ordinateur ( ➝ https://www.exactechgps.com ):
                 <ul>
                   <li>Développement de bibliothèques ‘core’ intégrées aux applications cliniques.</li>
@@ -82,18 +82,14 @@ export default class Index extends React.Component {
           </List>
           </CvArticle>
           { /* ------------------------------------------------------ */ }
-          <CvArticle
-            title="Education"
-            small={this.state.small}
-            colorIndex="light-2"
-          >
-            <ExperienceContent startingDate="2018" endingDate="2009" company="Udemy" city="Anthony Welc">
+          <CvArticle title="Education" small={this.state.small} colorIndex="light-2" >
+            <ExperienceContent subheading="2018 (in progress)" heading="Udemy, Anthony Welc">
             
             </ExperienceContent>
-            <ExperienceContent startingDate="2015" endingDate="(3 days)" company="Cap'Tronic" city="Grenoble INP">
+            <ExperienceContent subheading="2015 (3 days)" heading="Cap'Tronic, Grenoble INP">
             
             </ExperienceContent>
-            <ExperienceContent startingDate="2009" endingDate="2009" company="Joseph Fourier Univeristy" city="Grenoble">
+            <ExperienceContent subheading="2009" heading="Joseph Fourier Univeristy, Grenoble">
             
             </ExperienceContent>
           </CvArticle>
@@ -103,7 +99,7 @@ export default class Index extends React.Component {
             small={this.state.small}
             colorIndex="light-1"
           >
-            <Tiles fill={true} flush={false} selectable={true}>
+            <Tiles fill={true} flush={false} selectable={false}>
               <LanguageContent language="French">Native speaker.</LanguageContent>
               <LanguageContent language="English">
                 Fluent and technical.
@@ -120,11 +116,13 @@ export default class Index extends React.Component {
             colorIndex="light-2"
           />
           { /* ------------------------------------------------------ */ }
-          <CvArticle
-            title="I like"
-            small={this.state.small}
-            colorIndex="light-1"
-          />
+          
+          <CvArticle title="I like" small={this.state.small} colorIndex="light-1">
+            <Tiles fill={true} flush={false} selectable={false}>
+              <DiyContent/>
+            </Tiles>
+          </CvArticle>
+          
           { /* ------------------------------------------------------ */ }
           <CvArticle
             title="Contact"
