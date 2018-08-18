@@ -16,11 +16,12 @@ import Carousel from 'grommet/components/Carousel';
 //import ImgTest from '../images/IMG_20141101_141538.jpg';
 
 const DescriptionContent = props =>
-          (<ListItem>
-            <Paragraph margin="none">
+          (<Box align="center">
+          <Paragraph size="large">
+            
               {props.children}
-            </Paragraph>
-          </ListItem>);
+            </Paragraph></Box>
+          );
           
 const LanguageContent = props =>
           (<Tile separator='top' align='start' basis='1/4'>

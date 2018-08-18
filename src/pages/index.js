@@ -19,6 +19,10 @@ import {LanguageContent,ExperienceContent,DiyContent,DescriptionContent} from ".
 
 import "./styles.css";
 
+const markHighlightStyle = {
+   'background-color': '#fdfd96',
+};
+
 export default class Index extends React.Component {
   state = {};
 
@@ -75,7 +79,7 @@ export default class Index extends React.Component {
               <ExperienceContent subheading="2013 (Currently employed)" heading="Blue-Ortho an Exactec Company, Gières">
               Développement d’une caméra de localisation temps réel 3D pour la chirurgie assistée par ordinateur ( ➝ https://www.exactechgps.com ):
                 <ul>
-                  <li>Développement de <mark>bibliothèques ‘core’</mark> intégrées aux applications cliniques.</li>
+                  <li>Développement de <mark style={markHighlightStyle}>bibliothèques ‘core’</mark> intégrées aux applications cliniques.</li>
                   <li>Etude de dysfonctionnement matériel et optique de la caméra.</li>
                   <li>Développement d’outils de production permettant la calibration des caméras de localisation et de leurs trackers.</li>
                   <li>Application des normes des logiciels pour dispositif médicaux ISO62304.</li>

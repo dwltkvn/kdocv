@@ -19,17 +19,11 @@ class CvArticle extends React.Component {
 
   // {this.props.children}
   render() {
-    const sep = this.props.small ? "none" : "none";
-    const spacing = this.props.small ? "none" : "none";
-    
     const headerAnim = { animation: "fade", duration: 1000, delay: 0 };
     const contentAnim = { animation: "fade", duration: 1000, delay: 500 };
     
     return (
       <Section
-        separator={sep}
-        margin={spacing}
-        pad={spacing}
         full={this.props.small}
         colorIndex={this.props.colorIndex}
       >
