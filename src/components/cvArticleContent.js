@@ -1,5 +1,7 @@
 import React from "react";
 
+import Img from "gatsby-image";
+
 import ListItem from 'grommet/components/ListItem';
 import Tile from 'grommet/components/Tile';
 import Header from 'grommet/components/Header';
@@ -11,7 +13,7 @@ import Card from 'grommet/components/Card';
 import Image from 'grommet/components/Image';
 import Carousel from 'grommet/components/Carousel';
 
-import ImgTest from '../images/IMG_20141101_141538.jpg';
+//import ImgTest from '../images/IMG_20141101_141538.jpg';
 
 const DescriptionContent = props =>
           (<ListItem>
@@ -48,8 +50,7 @@ const ExperienceContent = props =>
 const DiyContent = props =>
 (<ListItem basis='3/4'>
 <Carousel>
-  <Image src={ImgTest} fit='contain'/>
-  <Image src={ImgTest} fit='contain'/>
+  <Img title="Dowlut Kevin" alt="Welcome !" sizes={props.propImg.sizes} style={{}} />
   <Box pad='large'
     colorIndex='neutral-3'>
     <Box pad='medium'

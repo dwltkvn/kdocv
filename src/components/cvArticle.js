@@ -10,12 +10,20 @@ class CvArticle extends React.Component {
 
   constructor(props) {
     super(props);
+    
+    this.state =
+    {
+      hasAppeared : false,
+    }
   }
 
   // {this.props.children}
   render() {
     const sep = this.props.small ? "none" : "none";
     const spacing = this.props.small ? "none" : "none";
+    
+    const headerAnim = { animation: "fade", duration: 1000, delay: 0 };
+    const contentAnim = { animation: "fade", duration: 1000, delay: 500 };
     
     return (
       <Section
@@ -26,16 +34,17 @@ class CvArticle extends React.Component {
         colorIndex={this.props.colorIndex}
       >
         <Animate
-          enter={{ animation: "fade", duration: 1000, delay: 0 }}
+          enter={headerAnim}
           keep={true}
-          visible={this.props.small ? "scroll" : true}
+          visible={ (this.props.small & !this.state.hasAppeared) ? "scroll" : true}
         >
           <Headline size="small" margin="small">{this.props.title}</Headline>
         </Animate>
         <Animate
-          enter={{ animation: "fade", duration: 3000, delay: 0 }}
+          enter={contentAnim}
           keep={true}
-          visible={this.props.small ? "scroll" : true}
+          visible={ (this.props.small & !this.state.hasAppeared) ? "scroll" : true}
+          onAppear={ () => { this.setState({hasAppeared:true}) } }
         >
         {this.props.children}
         </Animate>

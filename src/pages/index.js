@@ -28,11 +28,13 @@ export default class Index extends React.Component {
     this.state =
     {
       small : false,
+      componentMounted : false,
     }
   }
 
   componentDidMount() {
     this._responsive = Responsive.start(this._onResponsive);
+    this.setState( {componentMounted:true} );
   }
 
   componentWillUnmount() {
@@ -53,6 +55,9 @@ export default class Index extends React.Component {
         showOnResponsive="both"
       >
         <KdoCard propImg={this.props.data.headerImage}/>
+        
+        {
+          this.state.componentMounted ?
         <Box>
           <CvArticle
             title="Hello!"
@@ -64,12 +69,13 @@ export default class Index extends React.Component {
             </DescriptionContent>
           </CvArticle>
           { /* ------------------------------------------------------ */ }
+          
           <CvArticle title="Experiences" small={this.state.small}>
             <List selectable={false} >
               <ExperienceContent subheading="2013 (Currently employed)" heading="Blue-Ortho an Exactec Company, Gières">
               Développement d’une caméra de localisation temps réel 3D pour la chirurgie assistée par ordinateur ( ➝ https://www.exactechgps.com ):
                 <ul>
-                  <li>Développement de bibliothèques ‘core’ intégrées aux applications cliniques.</li>
+                  <li>Développement de <mark>bibliothèques ‘core’</mark> intégrées aux applications cliniques.</li>
                   <li>Etude de dysfonctionnement matériel et optique de la caméra.</li>
                   <li>Développement d’outils de production permettant la calibration des caméras de localisation et de leurs trackers.</li>
                   <li>Application des normes des logiciels pour dispositif médicaux ISO62304.</li>
@@ -119,7 +125,7 @@ export default class Index extends React.Component {
           
           <CvArticle title="I like" small={this.state.small} colorIndex="light-1">
             <Tiles fill={true} flush={false} selectable={false}>
-              <DiyContent/>
+              <DiyContent propImg={this.props.data.projectMImage1}/>
             </Tiles>
           </CvArticle>
           
@@ -129,7 +135,7 @@ export default class Index extends React.Component {
             small={this.state.small}
             colorIndex="light-2"
           />
-        </Box>
+        </Box> : null }
       </Split>
     );
   }
@@ -138,6 +144,11 @@ export default class Index extends React.Component {
 export const pageQuery = graphql`
   query HeaderImageQuery {
     headerImage: imageSharp(id: { regex: "/kdo.jpg/" }) {
+      sizes(maxWidth: 1240) {
+        ...GatsbyImageSharpSizes_tracedSVG
+      }
+    },
+    projectMImage1: imageSharp(id: { regex: "/cao-courbe-surface-subdivision.png/" }) {
       sizes(maxWidth: 1240) {
         ...GatsbyImageSharpSizes_tracedSVG
       }
