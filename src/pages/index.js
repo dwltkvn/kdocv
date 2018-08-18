@@ -8,11 +8,12 @@ import Paragraph from 'grommet/components/Paragraph';
 import Tiles from 'grommet/components/Tiles';
 import List from 'grommet/components/List';
 import Anchor from 'grommet/components/Anchor';
+import SVGIcon from 'grommet/components/SVGIcon';
 
 import KdoCard from "../components/kdoCard";
 import CvArticle from "../components/cvArticle";
 import KdoSocial from "../components/kdoSocial";
-import {LanguageContent,ExperienceContent,DiyContent,DescriptionContent} from "../components/cvArticleContent";
+import {LanguageContent,ExperienceContent,DiyContent,DescriptionContent,SvgFrance,SvgUK,SvgGerman} from "../components/cvArticleContent";
 
 import IconLinkNext from "grommet/components/icons/base/LinkNext";
 
@@ -116,13 +117,13 @@ export default class Index extends React.Component {
             colorIndex="light-1"
           >
             <Tiles fill={true} flush={false} selectable={false}>
-              <LanguageContent language="French">Native speaker.</LanguageContent>
-              <LanguageContent language="English">
+              <LanguageContent language="French" flag={<SvgFrance/>}>Native speaker.</LanguageContent>
+              <LanguageContent language="English" flag={<SvgUK/>}>
                 Fluent and technical.
                 Document writing.
                 Regular meeting and confcall with American partners.
               </LanguageContent>
-              <LanguageContent language="German">Scholar level.</LanguageContent>
+              <LanguageContent language="German" flag={<SvgGerman/>} >Scholar level.</LanguageContent>
             </Tiles>
           </CvArticle>
           { /* ------------------------------------------------------ */ }
