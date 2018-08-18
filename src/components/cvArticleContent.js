@@ -18,7 +18,6 @@ import Carousel from 'grommet/components/Carousel';
 const DescriptionContent = props =>
           (<Box align="center">
           <Paragraph size="large">
-            
               {props.children}
             </Paragraph></Box>
           );
@@ -36,7 +35,7 @@ const LanguageContent = props =>
             </Tile>);
 
 const ExperienceContent = props =>
-          (<ListItem align='start' alignContent='start' separator='top' margin="medium" direction="column">
+          (<ListItem align='start' alignContent='start' separator='top' margin={ {top:"small"} } direction="column">
               <Header size='small' pad={{"horizontal": "small"}}>
                 <Box>
                   <Heading tag='h6' strong={false} margin='none'>{props.subheading}</Heading>
@@ -49,17 +48,21 @@ const ExperienceContent = props =>
             </ListItem>);
 
 const DiyContent = props =>
-(<ListItem basis='3/4'>
-<Carousel>
-  <Img title="Dowlut Kevin" alt="Welcome !" sizes={props.propImg.sizes} style={{}} />
-  <Box pad='large'
-    colorIndex='neutral-3'>
-    <Box pad='medium'
-      colorIndex='neutral-2'>
-      Content inside of a Box element.
+{
+  const basisSize = props.small ? "3/4":"1/2";
+  
+  return (<ListItem basis={basisSize}>
+  <Carousel>
+    <Img title="Dowlut Kevin" alt="Welcome !" sizes={props.propImg.sizes} style={{}} />
+    <Box pad='large'
+      colorIndex='neutral-3'>
+      <Box pad='medium'
+        colorIndex='neutral-2'>
+        Content inside of a Box element.
+      </Box>
     </Box>
-  </Box>
-</Carousel>
-</ListItem>);
+  </Carousel>
+  </ListItem>);
+}
 
 export default {LanguageContent,ExperienceContent,DiyContent,DescriptionContent};

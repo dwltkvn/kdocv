@@ -6,16 +6,15 @@ import Responsive from "grommet/utils/Responsive";
 
 import Paragraph from 'grommet/components/Paragraph';
 import Tiles from 'grommet/components/Tiles';
-import Tile from 'grommet/components/Tile';
-import Header from 'grommet/components/Header';
-import Heading from 'grommet/components/Heading';
 import List from 'grommet/components/List';
-import ListItem from 'grommet/components/ListItem';
+import Anchor from 'grommet/components/Anchor';
 
 import KdoCard from "../components/kdoCard";
 import CvArticle from "../components/cvArticle";
 import KdoSocial from "../components/kdoSocial";
 import {LanguageContent,ExperienceContent,DiyContent,DescriptionContent} from "../components/cvArticleContent";
+
+import IconLinkNext from "grommet/components/icons/base/LinkNext";
 
 import "./styles.css";
 
@@ -76,8 +75,8 @@ export default class Index extends React.Component {
           
           <CvArticle title="Experiences" small={this.state.small}>
             <List selectable={false} >
-              <ExperienceContent subheading="2013 (Currently employed)" heading="Blue-Ortho an Exactec Company, Gières">
-              Développement d’une caméra de localisation temps réel 3D pour la chirurgie assistée par ordinateur ( ➝ https://www.exactechgps.com ):
+              <ExperienceContent subheading="2013 (8 years, Currently employed)" heading="Blue-Ortho an Exactec Company, Gières">
+              Développement d’une caméra de localisation temps réel 3D pour la chirurgie assistée par ordinateur:
                 <ul>
                   <li>Développement de <mark style={markHighlightStyle}>bibliothèques ‘core’</mark> intégrées aux applications cliniques.</li>
                   <li>Etude de dysfonctionnement matériel et optique de la caméra.</li>
@@ -88,13 +87,20 @@ export default class Index extends React.Component {
                   <li>Support client, support de l’équipe de production et analyse de logs.</li>
                   <li>Etude de portabilité d’applications QT existantes vers MacOS et Android.</li>
               </ul>
+              <Anchor icon={<IconLinkNext/>} label='https://www.exactechgps.com' href='https://www.exactechgps.com' />
+              </ExperienceContent>
+              <ExperienceContent subheading="2012 (6 month)" heading="Internshipment at Koelis, La Tronche">
+
+              </ExperienceContent>
+              <ExperienceContent subheading="2011 (6 month)" heading="Internshipment at GMCAO laboratory, La Tronche">
+
               </ExperienceContent>
           </List>
           </CvArticle>
           { /* ------------------------------------------------------ */ }
           <CvArticle title="Education" small={this.state.small} colorIndex="light-2" >
             <ExperienceContent subheading="2018 (in progress)" heading="Udemy, Anthony Welc">
-            
+              <Anchor icon={<IconLinkNext/>} label='Udemy' href='https://www.udemy.com/user/welc-anthony/' />
             </ExperienceContent>
             <ExperienceContent subheading="2015 (3 days)" heading="Cap'Tronic, Grenoble INP">
             
@@ -129,7 +135,7 @@ export default class Index extends React.Component {
           
           <CvArticle title="I like" small={this.state.small} colorIndex="light-1">
             <Tiles fill={true} flush={false} selectable={false}>
-              <DiyContent propImg={this.props.data.projectMImage1}/>
+              <DiyContent small={this.state.small} propImg={this.props.data.projectMImage1}/>
             </Tiles>
           </CvArticle>
           

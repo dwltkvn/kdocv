@@ -13,11 +13,11 @@ import "./kdoSkillsTyping.css";
 const Skills = [
   "Qt Framework",
   "C & C++ ",
-  "Design",
+  "Design & Prototyping",
   "SQLite ",
-  "To solve problem",
-  "Javascript ",
-  "React "
+  "To solve problem ",
+  "Javascript & React ",
+  "Specifications & Process ",
 ];
 const Colors = [
   "brand",
