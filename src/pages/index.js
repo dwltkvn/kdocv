@@ -8,7 +8,6 @@ import Paragraph from 'grommet/components/Paragraph';
 import Tiles from 'grommet/components/Tiles';
 import List from 'grommet/components/List';
 import Anchor from 'grommet/components/Anchor';
-import SVGIcon from 'grommet/components/SVGIcon';
 
 import KdoCard from "../components/kdoCard";
 import CvArticle from "../components/cvArticle";
@@ -64,14 +63,13 @@ export default class Index extends React.Component {
         {
           this.state.componentMounted ?
         <Box>
-        {this.state.small?<span>small</span>:<span>big</span>}
           <CvArticle title="Hello!" small={this.state.small} colorIndex="light-2">
             <DescriptionContent>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a felis fermentum, efficitur sapien ac, varius turpis. Donec at elementum mauris. Duis molestie lobortis erat eget facilisis. Vivamus commodo hendrerit lectus, ac ullamcorper velit malesuada id. Vestibulum et mattis sapien. Curabitur vitae vehicula ipsum. Donec non ex vel eros ultricies ultricies. Aliquam nisi tellus, elementum ac risus at, fringilla finibus metus. Aliquam maximus odio quis ligula finibus luctus. Vestibulum id metus tristique, iaculis massa vitae, condimentum arcu. Nam tristique est vel convallis volutpat. Donec ac felis vel ligula vehicula placerat vitae non ante.
             </DescriptionContent>
           </CvArticle>
           { /* ------------------------------------------------------ */ }
-          <CvContactForm/>
+          <CvContactForm small={this.state.small} colorIndex="neutral-1"/>
           { /* ------------------------------------------------------ */ }
           <CvArticle title="Experiences" small={this.state.small}>
             <List selectable={false} >
@@ -107,14 +105,14 @@ export default class Index extends React.Component {
           { /* ------------------------------------------------------ */ }
           <CvArticle title="Education" small={this.state.small} colorIndex="light-2" >
             <ExperienceContent subheading="2018 (in progress)" heading="Udemy, Anthony Welc">
-              <span>Trainings on my own initiative aiming to learn and develop <a href='https://developers.google.com/web/progressive-web-apps/'>Progressie Web App (PWA)</a> using modern web technologies (ECMAScript, React, JAMStack, ...).</span>
+              <span>Trainings on my own initiative aiming to learn and develop <mark style={markHighlightStyle}><a href='https://developers.google.com/web/progressive-web-apps/'>Progressive Web App (PWA)</a></mark> using modern web technologies (ECMAScript, React, JAMStack, ...).</span>
               
               <Anchor icon={<IconLinkNext/>} label='Udemy website' href='https://www.udemy.com/user/welc-anthony/' />
             </ExperienceContent>
             <ExperienceContent subheading="2015 (3 days)" heading="Cap'Tronic, Grenoble INP">
             
             </ExperienceContent>
-            <ExperienceContent subheading="2009" heading="Joseph Fourier Univeristy, Grenoble">
+            <ExperienceContent subheading="2009" heading="Joseph Fourier University, Grenoble">
               <ul>
                 <li>Successfully passed <mark style={markHighlightStyle}>professional Master degree in Images and CAD engineering</mark>. First Class honor.</li>
                 <li>Followed <mark style={markHighlightStyle}>Magistère graduate degree</mark> for 3 years. Passed with distinction.</li>

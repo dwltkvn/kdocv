@@ -11,6 +11,10 @@ import Header from 'grommet/components/Header';
 import Heading from 'grommet/components/Heading';
 import Form from 'grommet/components/Form';
 import TextInput from 'grommet/components/TextInput';
+import Section from "grommet/components/Section";
+import Box from "grommet/components/Box";
+
+import IconDown from "grommet/components/icons/base/Down";
 
 const CustomTextArea = props => <textarea rows="3" type="text"/>
 
@@ -34,7 +38,8 @@ class CvContactForm extends React.Component {
   render() {
     /* code */
 
-    return (<Quote emphasizeCredit={false} size='full'>
+    return ( <Section full={this.props.small} colorIndex={this.props.colorIndex} justify="around" pad="none">
+            <Quote emphasizeCredit={false} size='full'>
               <Form>
                 <Header>
                   <Heading>Contact Me !</Heading>
@@ -49,7 +54,12 @@ class CvContactForm extends React.Component {
                   <Button label='Submit' type='submit' primary={true} />
                 </Footer>
               </Form>
-            </Quote>);
+            </Quote>
+            <Box align="center">
+              <span>Continue below</span>
+              <IconDown/>
+            </Box>
+            </Section>);
   }
 }
 

@@ -11,7 +11,6 @@ import Anchor from "grommet/components/Anchor";
 import Hero from "grommet/components/Hero";
 
 import IconPdf from "grommet/components/icons/base/Download";
-import IconDown from "grommet/components/icons/base/Down";
 
 import KdoSocial from "./kdoSocial";
 import KdoSkillsTyping from "./kdoSkillsTyping";
@@ -51,11 +50,6 @@ class KdoCard extends React.Component {
         />
       </div>
         <KdoSocial small={this.props.small} />
-        {this.props.small ? (
-          <Box align="center">
-            <IconDown id="actions" />
-          </Box>
-        ) : null}
       </Section>
     );
   }
