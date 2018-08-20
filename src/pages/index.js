@@ -14,6 +14,7 @@ import KdoCard from "../components/kdoCard";
 import CvArticle from "../components/cvArticle";
 import KdoSocial from "../components/kdoSocial";
 import {LanguageContent,ExperienceContent,DiyContent,DescriptionContent,SvgFrance,SvgUK,SvgGerman} from "../components/cvArticleContent";
+import CvContactForm from "../components/cvContactForm";
 
 import IconLinkNext from "grommet/components/icons/base/LinkNext";
 
@@ -63,20 +64,18 @@ export default class Index extends React.Component {
         {
           this.state.componentMounted ?
         <Box>
-          <CvArticle
-            title="Hello!"
-            small={this.state.small}
-            colorIndex="light-2"
-          >
+        {this.state.small?<span>small</span>:<span>big</span>}
+          <CvArticle title="Hello!" small={this.state.small} colorIndex="light-2">
             <DescriptionContent>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a felis fermentum, efficitur sapien ac, varius turpis. Donec at elementum mauris. Duis molestie lobortis erat eget facilisis. Vivamus commodo hendrerit lectus, ac ullamcorper velit malesuada id. Vestibulum et mattis sapien. Curabitur vitae vehicula ipsum. Donec non ex vel eros ultricies ultricies. Aliquam nisi tellus, elementum ac risus at, fringilla finibus metus. Aliquam maximus odio quis ligula finibus luctus. Vestibulum id metus tristique, iaculis massa vitae, condimentum arcu. Nam tristique est vel convallis volutpat. Donec ac felis vel ligula vehicula placerat vitae non ante.
             </DescriptionContent>
           </CvArticle>
           { /* ------------------------------------------------------ */ }
-          
+          <CvContactForm/>
+          { /* ------------------------------------------------------ */ }
           <CvArticle title="Experiences" small={this.state.small}>
             <List selectable={false} >
-              <ExperienceContent subheading="2013 (8 years, Currently employed)" heading="Blue-Ortho an Exactec Company, Gières">
+              <ExperienceContent subheading="2010 (8 years, Currently employed)" heading="Blue-Ortho an Exactec Company, Gières">
               Développement d’une caméra de localisation temps réel 3D pour la chirurgie assistée par ordinateur:
                 <ul>
                   <li>Développement de <mark style={markHighlightStyle}>bibliothèques ‘core’</mark> intégrées aux applications cliniques.</li>
@@ -88,26 +87,38 @@ export default class Index extends React.Component {
                   <li>Support client, support de l’équipe de production et analyse de logs.</li>
                   <li>Etude de portabilité d’applications QT existantes vers MacOS et Android.</li>
               </ul>
-              <Anchor icon={<IconLinkNext/>} label='https://www.exactechgps.com' href='https://www.exactechgps.com' />
+              <Anchor icon={<IconLinkNext/>} label='Exactechgps website' href='https://www.exactechgps.com' />
               </ExperienceContent>
-              <ExperienceContent subheading="2012 (6 month)" heading="Internshipment at Koelis, La Tronche">
-
+              <ExperienceContent subheading="2009 (6 month, Internshipment)" heading="Koelis Company, La Tronche">
+                <ul>
+                <li>Development of an algorithm that performs the segmentation of the biopsy needle trajectory in an ultrasound image volume (C++/MFC).</li>
+                <li>Implementation of a validation tracking method of the registration in an ultrasound prostate image volume (C++/MFC).</li>
+                </ul>
+                <Anchor icon={<IconLinkNext/>} label='Koelis website' href='https://koelis.com/' />
               </ExperienceContent>
-              <ExperienceContent subheading="2011 (6 month)" heading="Internshipment at GMCAO laboratory, La Tronche">
-
+              <ExperienceContent subheading="2008 (6 month, Internshipment)" heading="TIMC-GMCAO laboratory, La Tronche">
+                <ul>
+                <li>Development of a software that allows a semi-automatic segmentation of a prostate ultrasound image volume (C++/MFC).</li>
+                </ul>
+                <Anchor icon={<IconLinkNext/>} label='TIMC-GMCAO website' href='http://www-timc.imag.fr/rubrique9.html' />
               </ExperienceContent>
           </List>
           </CvArticle>
           { /* ------------------------------------------------------ */ }
           <CvArticle title="Education" small={this.state.small} colorIndex="light-2" >
             <ExperienceContent subheading="2018 (in progress)" heading="Udemy, Anthony Welc">
-              <Anchor icon={<IconLinkNext/>} label='Udemy' href='https://www.udemy.com/user/welc-anthony/' />
+              <span>Trainings on my own initiative aiming to learn and develop <a href='https://developers.google.com/web/progressive-web-apps/'>Progressie Web App (PWA)</a> using modern web technologies (ECMAScript, React, JAMStack, ...).</span>
+              
+              <Anchor icon={<IconLinkNext/>} label='Udemy website' href='https://www.udemy.com/user/welc-anthony/' />
             </ExperienceContent>
             <ExperienceContent subheading="2015 (3 days)" heading="Cap'Tronic, Grenoble INP">
             
             </ExperienceContent>
             <ExperienceContent subheading="2009" heading="Joseph Fourier Univeristy, Grenoble">
-            
+              <ul>
+                <li>Successfully passed <mark style={markHighlightStyle}>professional Master degree in Images and CAD engineering</mark>. First Class honor.</li>
+                <li>Followed <mark style={markHighlightStyle}>Magistère graduate degree</mark> for 3 years. Passed with distinction.</li>
+              </ul>
             </ExperienceContent>
           </CvArticle>
           { /* ------------------------------------------------------ */ }
@@ -119,33 +130,22 @@ export default class Index extends React.Component {
             <Tiles fill={true} flush={false} selectable={false}>
               <LanguageContent language="French" flag={<SvgFrance/>}>Native speaker.</LanguageContent>
               <LanguageContent language="English" flag={<SvgUK/>}>
-                Fluent and technical.
-                Document writing.
-                Regular meeting and confcall with American partners.
+                <div>Fluent and technical.</div>
+                <div>Document writing.</div>
+                <div>Regular meeting and confcall with American partners.</div>
               </LanguageContent>
               <LanguageContent language="German" flag={<SvgGerman/>} >Scholar level.</LanguageContent>
             </Tiles>
           </CvArticle>
           { /* ------------------------------------------------------ */ }
-          <CvArticle
-            title="This is what I do"
-            small={this.state.small}
-            colorIndex="light-2"
-          />
-          { /* ------------------------------------------------------ */ }
           
-          <CvArticle title="I like" small={this.state.small} colorIndex="light-1">
+          <CvArticle title="I like" small={this.state.small} colorIndex="light-2">
             <Tiles fill={true} flush={false} selectable={false}>
               <DiyContent small={this.state.small} propImg={this.props.data.projectMImage1}/>
             </Tiles>
           </CvArticle>
           
           { /* ------------------------------------------------------ */ }
-          <CvArticle
-            title="Contact"
-            small={this.state.small}
-            colorIndex="light-2"
-          />
         </Box> : null }
       </Split>
     );
