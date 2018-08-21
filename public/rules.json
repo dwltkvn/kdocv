@@ -1,0 +1,6 @@
+{
+  "rules": [
+    { "pathname": "/", "dest": "kdocv-xxxxxxxxxx.now.sh" },
+    { "pathname": "/**", "dest": "kdocv-xxxxxxxxxx.now.sh" }
+  ]
+}
