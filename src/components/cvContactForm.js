@@ -38,7 +38,7 @@ class CvContactForm extends React.Component {
   render() {
     /* code */
 
-    return ( <Section full={this.props.small} colorIndex={this.props.colorIndex} justify="around" pad="none">
+    return ( <Section full={true} colorIndex={this.props.colorIndex} justify="around" pad="none">
             <Quote emphasizeCredit={false} size='full'>
               <Form>
                 <Header>

@@ -12,7 +12,7 @@ import Anchor from 'grommet/components/Anchor';
 import KdoCard from "../components/kdoCard";
 import CvArticle from "../components/cvArticle";
 import KdoSocial from "../components/kdoSocial";
-import {LanguageContent,ExperienceContent,DiyContent,DescriptionContent,SvgFrance,SvgUK,SvgGerman} from "../components/cvArticleContent";
+import {LanguageContent,ExperienceContent,DiyContent,DescriptionContent,SvgFrance,SvgUK,SvgGerman, SkillsContent} from "../components/cvArticleContent";
 import Toast from 'grommet/components/Toast';
 
 import IconLinkNext from "grommet/components/icons/base/LinkNext";
@@ -72,23 +72,24 @@ export default class Index extends React.Component {
           }
           <CvArticle title="Hello!" small={this.state.small} colorIndex="light-2">
             <DescriptionContent>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a felis fermentum, efficitur sapien ac, varius turpis. Donec at elementum mauris. Duis molestie lobortis erat eget facilisis. Vivamus commodo hendrerit lectus, ac ullamcorper velit malesuada id.
+            I'm Dowlut Kevin and i'm <mark style={markHighlightStyle}>currently looking for a software developer position</mark>. Following my Master degree in image processing, I have been lucky enough to work for more than 8 years in medical fields.</DescriptionContent>
+            <DescriptionContent>Theses experiences allowed me to expand my skills beyond software area: Hardware, Electronic, Optic, Quality Assurance, Embedded System, Field Support, Production Constraint, Validation Test Campaign and much more !
             </DescriptionContent>
           </CvArticle>
           { /* ------------------------------------------------------ */ }
           <CvArticle title="Experiences" small={this.state.small}>
             <List selectable={false} >
               <ExperienceContent subheading="2010 (8 years, Currently employed)" heading="Blue-Ortho an Exactec Company, Gières">
-              Développement d’une caméra de localisation temps réel 3D pour la chirurgie assistée par ordinateur:
+              Development of a real time camera localizer for computer assisted surgery:
                 <ul>
-                  <li>Développement de <mark style={markHighlightStyle}>bibliothèques ‘core’</mark> intégrées aux applications cliniques.</li>
-                  <li>Etude de dysfonctionnement matériel et optique de la caméra.</li>
-                  <li>Développement d’outils de production permettant la calibration des caméras de localisation et de leurs trackers.</li>
-                  <li>Application des normes des logiciels pour dispositif médicaux ISO62304.</li>
-                  <li>Rédaction de spécifications techniques et plans de tests.</li>
-                  <li>Exécution de campagnes de validation des applications cliniques.</li>
-                  <li>Support client, support de l’équipe de production et analyse de logs.</li>
-                  <li>Etude de portabilité d’applications QT existantes vers MacOS et Android.</li>
+                  <li>Development of a <mark style={markHighlightStyle}>‘core’ library</mark> integrated to clinical applications.</li>
+                  <li>Study of <mark style={markHighlightStyle}>camera hardware and optic dysfunctions</mark>.</li>
+                  <li>Creation of <mark style={markHighlightStyle}>production tools allowing calibration</mark> of camera localizer and theirs trackers.</li>
+                  <li>Application of medical device standard ISO62304.</li>
+                  <li><mark style={markHighlightStyle}>Technical specifications</mark> and test plans writing.</li>
+                  <li>Perform <mark style={markHighlightStyle}>validation campaign</mark> of clinical applications.</li>
+                  <li><mark style={markHighlightStyle}>Client support</mark>, production team support and logs analysis.</li>
+                  <li>Portability study of existing Qt application to MacOS and Android.</li>
               </ul>
               <Anchor icon={<IconLinkNext/>} label='Exactechgps website' href='https://www.exactechgps.com' />
               </ExperienceContent>
@@ -115,7 +116,8 @@ export default class Index extends React.Component {
               <Anchor icon={<IconLinkNext/>} label='Udemy website' href='https://www.udemy.com/user/welc-anthony/' />
             </ExperienceContent>
             <ExperienceContent subheading="2015 (3 days)" heading="Cap'Tronic, Grenoble INP">
-            
+              Practical training to FPGA technology and VHDL language.
+              <Anchor icon={<IconLinkNext/>} label='Training overview' href='https://www.dropbox.com/s/8xdbb463zapdgmw/Programme_FPGA.PDF?dl=0' />
             </ExperienceContent>
             <ExperienceContent subheading="2009" heading="Joseph Fourier University, Grenoble">
               <ul>
@@ -125,10 +127,14 @@ export default class Index extends React.Component {
             </ExperienceContent>
           </CvArticle>
           { /* ------------------------------------------------------ */ }
+          <CvArticle title="Technical Skills" small={this.state.small} colorIndex="light-1">
+            <SkillsContent small={this.state.small}/>
+          </CvArticle>
+          { /* ------------------------------------------------------ */ }
           <CvArticle
             title="Languages"
             small={this.state.small}
-            colorIndex="light-1"
+            colorIndex="light-2"
           >
             <Tiles fill={true} flush={false} selectable={false}>
               <LanguageContent language="French" flag={<SvgFrance/>}>Native speaker.</LanguageContent>
@@ -142,7 +148,7 @@ export default class Index extends React.Component {
           </CvArticle>
           { /* ------------------------------------------------------ */ }
           
-          <CvArticle title="I like" small={this.state.small} colorIndex="light-2">
+          <CvArticle title="I like" small={this.state.small} colorIndex="light-1">
             <Tiles fill={true} flush={false} selectable={false}>
               <DiyContent small={this.state.small} propImg={this.props.data.projectMImage1}/>
             </Tiles>

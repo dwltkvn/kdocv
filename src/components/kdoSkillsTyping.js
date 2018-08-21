@@ -45,7 +45,7 @@ class KdoSkillsTyping extends React.Component {
     ml4.scaleOut = 3;
     ml4.durationIn = 800;
     ml4.durationOut = 600;
-    ml4.delay = 500;
+    ml4.delay = 2000;
 
     let animeObj = anime.timeline({ loop: true });
     Skills.forEach((e, i) => {

@@ -3,6 +3,7 @@ import React from "react";
 import Img from "gatsby-image";
 
 import ListItem from 'grommet/components/ListItem';
+import Tiles from 'grommet/components/Tiles';
 import Tile from 'grommet/components/Tile';
 import Header from 'grommet/components/Header';
 import Heading from 'grommet/components/Heading';
@@ -16,6 +17,10 @@ import Carousel from 'grommet/components/Carousel';
 import SVGIcon from 'grommet/components/SVGIcon';
 
 //import ImgTest from '../images/IMG_20141101_141538.jpg';
+
+const markHighlightStyle = {
+   'backgroundColor': '#eeeeee',
+};
 
 const SvgFrance = props =>
         (<SVGIcon viewBox='0 0 640 480' size="xsmall" version='1.1' type='logo' a11yTitle='I Speak French'>
@@ -104,4 +109,66 @@ const DiyContent = props =>
   </ListItem>);
 }
 
-export default {LanguageContent,ExperienceContent,DiyContent,DescriptionContent,SvgFrance,SvgUK,SvgGerman};
+const SkillsContent = props =>
+{
+  const align = props.small ? "center":"stretch";
+  return (
+    <Tiles fill={true} flush={false}>
+      <Tile colorIndex="neutral-1-a">
+        <b>Programming language</b>
+        <Box direction="row" justify="around" alignSelf={align} separator="top">
+          <span><mark style={markHighlightStyle}>&nbsp;C/C++&nbsp;</mark></span>
+          <span><mark style={markHighlightStyle}>&nbsp;Qt&nbsp;</mark></span>
+          <span>ASM (Assembly)</span>
+        </Box>
+      </Tile>
+      
+      <Tile colorIndex="neutral-2-a">
+        <b>Script language</b>
+        <Box direction="row" justify="around" alignSelf={align} separator="top">
+          <span><mark style={markHighlightStyle}>&nbsp;Javascript&nbsp;</mark></span>
+          <span><mark style={markHighlightStyle}>&nbsp;SQLite&nbsp;</mark></span>
+          <span>Matlab</span>
+          <span>Python (beginner)</span>
+        </Box>
+      </Tile>
+      <Tile colorIndex="neutral-3-a">
+        <b>Development Tools</b>
+        <Box direction="row" justify="around" alignSelf={align} separator="top">
+          <span>SVN</span>
+          <span><mark style={markHighlightStyle}>&nbsp;GIT&nbsp;</mark></span>
+          <span><mark style={markHighlightStyle}>&nbsp;Visual Studio&nbsp;</mark></span>
+          <span>Qt Studio</span>
+        </Box>
+      </Tile>
+      <Tile colorIndex="neutral-2-a">
+        <b>Firmware Maintenance</b>
+        <Box direction="row" justify="around" alignSelf={align} separator="top">
+          <span>Microcontroller Atmel</span>
+          <span>Altera FPGA</span>
+          <span>Cypress FX USB</span>
+        </Box>
+      </Tile>
+      <Tile colorIndex="neutral-3-a">
+        <b>Operating System</b>
+        <Box direction="row" justify="around" alignSelf={align} separator="top">
+          <span>Windows</span>
+          <span>Linux</span>
+          <span>Android</span>
+        </Box>
+      </Tile>
+      <Tile colorIndex="neutral-1-a">
+        <b>Image Processing & CAD</b>
+        <Box direction="row" justify="around" alignSelf={align} separator="top">
+          <span>Image Processing</span>
+          <span>Computer Vision</span>
+          <span>Scientific Visualization</span>
+          <span>Image Synthesis</span>
+          <span>Mathematical Morphology</span>
+        </Box>
+      </Tile>
+    </Tiles>
+    );
+}
+
+export default {LanguageContent,ExperienceContent,DiyContent,DescriptionContent,SvgFrance,SvgUK,SvgGerman,SkillsContent};
