@@ -32,18 +32,16 @@ class KdoSocial extends React.Component {
         wrap={false}
       >
         <SocialAnchor
-          small={this.props.small}
           label="/ dwltkvn"
           icon={<IconGithub />}
           href="https://github.com/dwltkvn"
         />
         
         <SocialAnchor
-          small={this.props.small}
           label="/ contact"
           icon={<IconMail />}
-          href="#contact"
           primary={true}
+          onClick={ () => this.props.propOnContactClick() }
         />
         
       </Box>

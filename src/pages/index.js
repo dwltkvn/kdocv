@@ -13,14 +13,14 @@ import KdoCard from "../components/kdoCard";
 import CvArticle from "../components/cvArticle";
 import KdoSocial from "../components/kdoSocial";
 import {LanguageContent,ExperienceContent,DiyContent,DescriptionContent,SvgFrance,SvgUK,SvgGerman} from "../components/cvArticleContent";
-import CvContactForm from "../components/cvContactForm";
+import Toast from 'grommet/components/Toast';
 
 import IconLinkNext from "grommet/components/icons/base/LinkNext";
 
 import "./styles.css";
 
 const markHighlightStyle = {
-   'background-color': '#fdfd96',
+   'backgroundColor': '#fdfd96',
 };
 
 export default class Index extends React.Component {
@@ -33,6 +33,7 @@ export default class Index extends React.Component {
     {
       small : false,
       componentMounted : false,
+      showContactToast : false,
     }
   }
 
@@ -48,6 +49,8 @@ export default class Index extends React.Component {
   _onResponsive(small) {
     this.setState({ small });
   }
+  
+  
 
   render() {
     return (
@@ -58,18 +61,20 @@ export default class Index extends React.Component {
         priority="right"
         showOnResponsive="both"
       >
-        <KdoCard propImg={this.props.data.headerImage}/>
-        
+        <KdoCard propImg={this.props.data.headerImage} propOnContactClick={ () => this.setState( {showContactToast:true}) }/>
         {
           this.state.componentMounted ?
         <Box>
+          {
+            this.state.showContactToast?
+            <Toast status='ok' onClose={ () => this.setState( {showContactToast:false} ) }>Please, send me an email at dowlut.kevin [at] gmail.com</Toast>
+            :null
+          }
           <CvArticle title="Hello!" small={this.state.small} colorIndex="light-2">
             <DescriptionContent>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a felis fermentum, efficitur sapien ac, varius turpis. Donec at elementum mauris. Duis molestie lobortis erat eget facilisis. Vivamus commodo hendrerit lectus, ac ullamcorper velit malesuada id. Vestibulum et mattis sapien. Curabitur vitae vehicula ipsum. Donec non ex vel eros ultricies ultricies. Aliquam nisi tellus, elementum ac risus at, fringilla finibus metus. Aliquam maximus odio quis ligula finibus luctus. Vestibulum id metus tristique, iaculis massa vitae, condimentum arcu. Nam tristique est vel convallis volutpat. Donec ac felis vel ligula vehicula placerat vitae non ante.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a felis fermentum, efficitur sapien ac, varius turpis. Donec at elementum mauris. Duis molestie lobortis erat eget facilisis. Vivamus commodo hendrerit lectus, ac ullamcorper velit malesuada id.
             </DescriptionContent>
           </CvArticle>
-          { /* ------------------------------------------------------ */ }
-          <CvContactForm small={this.state.small} colorIndex="neutral-1"/>
           { /* ------------------------------------------------------ */ }
           <CvArticle title="Experiences" small={this.state.small}>
             <List selectable={false} >

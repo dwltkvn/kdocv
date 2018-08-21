@@ -49,7 +49,7 @@ class KdoCard extends React.Component {
           colorIndex="light-2"
         />
       </div>
-        <KdoSocial small={this.props.small} />
+        <KdoSocial small={this.props.small} propOnContactClick={this.props.propOnContactClick}/>
       </Section>
     );
   }
