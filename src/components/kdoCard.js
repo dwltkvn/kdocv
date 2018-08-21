@@ -39,9 +39,9 @@ class KdoCard extends React.Component {
           label="Dowlut Kevin"
           heading="Software Developer"
           description={<KdoSkillsTyping />}
-          link={<Box separator="all"><IconPdf/>
+          link={<Box><IconPdf/>
             <Anchor
-              href="https://www.dropbox.com/s/bo2x8vyhyceqaly/CV_DOWLUT_Kevin.pdf?dl=0"Z
+              href="https://www.dropbox.com/s/bo2x8vyhyceqaly/CV_DOWLUT_Kevin.pdf?dl=0"
               label="Download CV"
             /></Box>
           }

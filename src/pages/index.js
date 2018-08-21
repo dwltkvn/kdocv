@@ -148,12 +148,6 @@ export default class Index extends React.Component {
           </CvArticle>
           { /* ------------------------------------------------------ */ }
           
-          <CvArticle title="I like" small={this.state.small} colorIndex="light-1">
-            <Tiles fill={true} flush={false} selectable={false}>
-              <DiyContent small={this.state.small} propImg={this.props.data.projectMImage1}/>
-            </Tiles>
-          </CvArticle>
-          
           { /* ------------------------------------------------------ */ }
         </Box> : null }
       </Split>
@@ -171,6 +165,11 @@ export const pageQuery = graphql`
     projectMImage1: imageSharp(id: { regex: "/cao-courbe-surface-subdivision.png/" }) {
       sizes(maxWidth: 1240) {
         ...GatsbyImageSharpSizes_tracedSVG
+      }
+    },
+    s_projectMImage1: imageSharp(id: { regex: "/cao-courbe-surface-subdivision.png/" }) {
+      resize(width: 125, height: 125, rotate: 90) {
+        src
       }
     }
   }
